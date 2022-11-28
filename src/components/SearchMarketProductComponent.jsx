@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ProductService from '../services/ProductService'
+import MarketHeaderComponent from './MarketHeaderComponent'
 
 
 import { Image } from 'react';
@@ -24,6 +25,7 @@ class SearchMarketProductComponent extends Component {
       
         this.allProduct = this.allProduct.bind(this);
         this.mySearchHandler=this.mySearchHandler.bind(this);
+        this.addCartProduct=this.addCartProduct.bind(this);
     }
 
    
@@ -35,6 +37,10 @@ class SearchMarketProductComponent extends Component {
         ProductService.searchProductsByQuery(query).then((res) => {
             this.setState({ products: res.data});
         });
+     }
+
+    addCartProduct(id){
+        this.props.history.push(`/add-cart-item/${id}/${this.state.cId}`);
      }
 
     mySearchHandler= (event) => {
@@ -57,6 +63,7 @@ class SearchMarketProductComponent extends Component {
         return (
            
             <div className= "scrollbar-ripe-malinka">
+            <MarketHeaderComponent/>
                     <br></br><br></br><br></br><br></br>
                  <h2 className="text-center">Product List</h2>
     

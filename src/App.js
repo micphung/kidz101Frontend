@@ -16,7 +16,8 @@ import ListSellerProductFilterComponent from './components/ListSellerProductFilt
 import CreateConsumerComponent from './components/CreateConsumerComponent';
 import MarketAllProductComponent from './components/MarketAllProductComponent';
 import SearchMarketProductComponent from './components/SearchMarketProductComponent';
-
+import AddCartItemComponent from './components/AddCartItemComponent';
+import MyCartComponent from './components/MyCartComponent';
 
 function App() {
   return (
@@ -30,12 +31,13 @@ function App() {
                           <Route exact path = "/products/:sId" component = {ListAllProductComponent}></Route>
                           <Route exact path = "/market/:cId" component = {MarketAllProductComponent}></Route>
                           <Route exact path = "/my-product/:sId" component = {ListSellerProductComponent}></Route>
+                          <Route exact path = "/add-cart-item/:id/:cId" component = {AddCartItemComponent}></Route>
                           <Route exact path = "/search-my-product/:sId/:query" component = {ListSellerProductFilterComponent}></Route>
                           <Route exact path = "/add-product/:sId" component = {CreateProductComponent}></Route>
                           <Route exact path = "/update-product/:id" component = {UpdateProductComponent}></Route>
                           <Route exact path = "/search-products/:sId/:query" component = {SearchProductComponent}></Route>
                           <Route exact path = "/search-market-products/:cId/:query" component = {SearchMarketProductComponent}></Route>
-                         
+                          <Route exact path = "/my-cart/:cId" component = {MyCartComponent}></Route>
                     </Switch>
                 </div>
               <FooterComponent />

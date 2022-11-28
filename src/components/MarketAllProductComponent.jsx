@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ProductService from '../services/ProductService'
 
 import ConsumerService from '../services/ConsumerService'
+import MarketHeaderComponent from './MarketHeaderComponent'
 
 
 import { Image } from 'react';
@@ -18,8 +19,8 @@ class MarketAllProductComponent extends Component {
                 query:''
         }
        
-        // this.changecIdHandler= this.changecIdHandler.bind(this);
-        // this.myProduct=this.myProduct.bind(this);
+        this.myCartHandler= this.myCartHandler.bind(this);
+        this.addCartProduct=this.addCartProduct.bind(this);
         this.mySearchHandler=this.mySearchHandler.bind(this);
     }
 
@@ -33,9 +34,9 @@ class MarketAllProductComponent extends Component {
         });
      }
 
-     // addCartProduct(id){
-     //    this.props.history
-     // }
+     addCartProduct(id){
+        this.props.history.push(`/add-cart-item/${id}/${this.state.cId}`);
+     }
 
     // changesIdHandler= (event) => {
     //         this.setState({cId: event.target.value});
@@ -44,11 +45,9 @@ class MarketAllProductComponent extends Component {
         this.setState({query: event.target.value});
     }
 
-   // myCart(){
-            // console.log(SID);
-            // console.log( typeof( SID ));
-            // this.props.history.push(`/my-product/${this.state.sId}`);
-        //}
+   myCartHandler(){
+            this.props.history.push(`/my-cart/${this.state.cId}`);
+        }
   
 
      mySearch= () => {
@@ -58,14 +57,13 @@ class MarketAllProductComponent extends Component {
 
         }
 
-     addCartProduct(){
 
-     }
 
     render() {
         return (
            
             <div className= "scrollbar-ripe-malinka">
+            <MarketHeaderComponent/>
                  <br></br><br></br><br></br><br></br>
                  <h2 className="text-center">Kidz101</h2>
     
@@ -88,7 +86,7 @@ class MarketAllProductComponent extends Component {
                 
                  <br></br><br></br>                 
                  <div>
-                   <button className="btn btn-primary" id="btn" onClick={this.myProduct}> My Cart</button>
+                   <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
                  </div>
                  
                  <div className = "row">
