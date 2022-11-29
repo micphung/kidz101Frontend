@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import CartItemService from '../services/CartItemService'
+import MarketHeaderComponent from './MarketHeaderComponent'
+
+
 
 
 import { Image } from 'react';
@@ -12,6 +15,7 @@ class MyCartComponent extends Component {
         //we initialize an array products - need to make a call to restAPI and store list in products array 
         this.state = {
                 cartItems: [], 
+                qTotal:'',
 
 
                 cId: this.props.match.params.cId
@@ -20,8 +24,8 @@ class MyCartComponent extends Component {
 
 
         // this.addProduct = this.addProduct.bind(this);
-        // this.editProduct = this.editProduct.bind(this);
-        // this.deleteProduct = this.deleteProduct.bind(this);
+        this.editCartItem = this.editCartItem.bind(this);
+        this.deleteCartItemHandler = this.deleteCartItemHandler.bind(this);
         // this.allProduct = this.allProduct.bind(this);
     }
 
@@ -30,6 +34,7 @@ class MyCartComponent extends Component {
 
     componentDidMount(){
         let cId = this.state.cId;
+
         CartItemService.searchcIdItemsByQuery(cId).then((res) => {
             this.setState({ cartItems: res.data});
         });
@@ -45,22 +50,23 @@ class MyCartComponent extends Component {
    //      this.props.history.push(`/add-product/${this.state.sId}`);
    //  }
 
-   // deleteProduct(id){
-   //  ProductService.deleteProduct(id).then( res => {
-   //      this.setState({products: this.state.products.filter(product => product.id !== id)});
-   //  });
-   //  }
+   deleteCartItemHandler(ciId){
+    CartItemService.deleteCartItem(ciId).then( res => {
+        this.setState({cartItems: this.state.cartItems.filter(cartItem => cartItem.ciId !== ciId)});
+    });
+    }
     
-   //  editProduct(id){
-   //      this.props.history.push(`/update-product/${id}`);
-   //  }
+    editCartItem(ciId){
+        this.props.history.push(`/update-cart-item/${ciId}/${this.state.cId}`);
+    }
 
     render() {
         return (
-           
+           <div>
+           <MarketHeaderComponent/>
             <div className= "scrollbar-ripe-malinka">
                  <br></br><br></br><br></br><br></br>
-                 <h2 className="text-center">Product List</h2>
+                 <h2 className="text-center">Your Cart</h2>
                  <div className = "form-group">
                     <label> Your ID </label>
                     <br></br>
@@ -83,9 +89,10 @@ class MyCartComponent extends Component {
                                     
                                     <th> Product Name</th>
                                 
-                                    <th> Price</th>
+                                    <th> Unit Price</th>
                                     <th> Image URL</th>
                                     <th> Quantity</th>
+                                    <th> Price</th>
                                     <th> Actions</th>
                                 </tr>
                             </thead>
@@ -104,9 +111,10 @@ class MyCartComponent extends Component {
                                              <td> {cartItem.iPrice}</td>
                                              <td> <img src= {cartItem.iUrl}  width="200" height="200" /></td>
                                              <td> {cartItem.qty}</td>
+                                             <td>  {(cartItem.qty * cartItem.iPrice)}</td>
                                              <td className = "centerButton">
-                                                <button onClick={()=> this.editProduct(cartItem.ciId)} className="btn btn-info">Update</button>
-                                                <button style={{marginLeft: "10px"}} onClick={ () => this.deleteProduct(cartItem.ciId)} className="btn btn-danger">Delete </button>
+                                                <button onClick={()=> this.editCartItem(cartItem.ciId)} className="btn btn-info">Edit </button>
+                                                <button style={{marginLeft: "10px"}} onClick={ () => this.deleteCartItemHandler(cartItem.ciId)} className="btn btn-danger">Remove </button>
                                              </td>
                                         </tr>
 
@@ -117,6 +125,7 @@ class MyCartComponent extends Component {
 
                  </div>
                  <br></br><br></br><br></br><br></br>
+            </div>
             </div>
 
         )

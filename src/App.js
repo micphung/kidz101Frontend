@@ -18,6 +18,9 @@ import MarketAllProductComponent from './components/MarketAllProductComponent';
 import SearchMarketProductComponent from './components/SearchMarketProductComponent';
 import AddCartItemComponent from './components/AddCartItemComponent';
 import MyCartComponent from './components/MyCartComponent';
+import UpdateCartItemComponent from './components/UpdateCartItemComponent';
+
+
 
 function App() {
   return (
@@ -38,6 +41,9 @@ function App() {
                           <Route exact path = "/search-products/:sId/:query" component = {SearchProductComponent}></Route>
                           <Route exact path = "/search-market-products/:cId/:query" component = {SearchMarketProductComponent}></Route>
                           <Route exact path = "/my-cart/:cId" component = {MyCartComponent}></Route>
+                          <Route exact path = "/update-cart-item/:ciId/:cId" component = {UpdateCartItemComponent}></Route>
+
+
                     </Switch>
                 </div>
               <FooterComponent />
