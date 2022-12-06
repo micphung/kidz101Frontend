@@ -84,7 +84,7 @@ class MarketAllProductComponent extends Component {
                  <h2 className="text-center">Kidz101</h2>
                  <div>
                     <button className="btn btn-primary" onClick={this.handleClick}>Orders</button>
-                    <div> Order number: {this.state.oId}</div>
+                   
                 </div>
                 
                     <div className = "form-group">

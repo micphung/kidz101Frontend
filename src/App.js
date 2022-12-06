@@ -53,8 +53,7 @@ function App() {
                           <Route exact path = "/checkout/:cId/:oId" component = {ConfirmOrderComponent}></Route>
                           <Route exact path = "/processing/:cId/:ciId/:id" component = {CreateProcessingCartItem}></Route>
                           <Route exact path = "/my-orders/:cId" component = {ConsumerOrdersComponent}></Route>
-                          <Route exact path = "/view-order-details/:oId/:cId" component = {ConsumerOrdersDetailsComponent}></Route>
-                          
+                          <Route exact path = "/view-order-details/:oId/:cId" component = {ConsumerOrdersDetailsComponent}></Route> 
                          <Route exact path = "/seller-orders/:sId" component = {SellerOrdersComponent}></Route>
 
 
