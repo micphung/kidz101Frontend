@@ -73,9 +73,10 @@ class CreateConsumerComponent extends Component {
                                         <input placeholder="Password" name="password" className="form-control"
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
-
-                                    <button className="btn btn-primary  offset-md" onClick={this.alreadyMember}> Login</button>
-                                    <button id="forgotPass" className="btn ml-auto" onClick={this.alreadyMember}> Forgot Password?</button>
+                                    <div id="loginButton">
+                                        <button id="loginButtons" className="btn btn-primary" onClick={this.alreadyMember}> Login</button>
+                                        <button id="forgotPass" className="btn ml-auto" onClick={this.alreadyMember}> Forgot Password?</button>
+                                    </div>
                                 </form>
 
                             </div>
@@ -100,10 +101,10 @@ class CreateConsumerComponent extends Component {
                                     </div>
 
 
-                                    <div className="">
+                                    <div id="signupButton" class="signupButton">
 
 
-                                        <button className="btn btn-success" onClick={this.saveProduct}>Save</button>
+                                        <button id="loginButtons" className="btn btn-success" onClick={this.saveProduct}>Create Account</button>
                                         {/*<button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>*/}
                                     </div>
 

@@ -194,6 +194,10 @@ body {
   margin-top: 8%;
 }
 
+#signupButton {
+  margin-bottom: 5px;
+}
+
 .circle1,
 .circle2 {
   background: white;
