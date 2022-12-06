@@ -26,6 +26,15 @@ class CartItemService{
     searchcIdItemsByQuery(cId){
     	return axios.get(CARTITEM_API_BASE_URL + '/searchcId?cId=' + cId);
     }
+    totalBycIdQuery(cId){
+    	return axios.get(CARTITEM_API_BASE_URL + '/cartTotal?cId=' + cId);
+    }
+    cIdExistsfromCartItems(cId){
+        return axios.get(CARTITEM_API_BASE_URL + '/getOID?cId=' + cId);
+    }
+    deleteAllCartItembyCID(cId){
+        return axios.delete(CARTITEM_API_BASE_URL + '/emptyCartbycId?cId=' + cId);
+    }
     
 }
 export default new CartItemService()

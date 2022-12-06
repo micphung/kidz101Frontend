@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CartItemService from '../services/CartItemService'
+import ProcessedCartItemService from '../services/ProcessedCartItemService'
 import MarketHeaderComponent from './MarketHeaderComponent'
 
 
@@ -15,18 +16,17 @@ class MyCartComponent extends Component {
         //we initialize an array products - need to make a call to restAPI and store list in products array 
         this.state = {
                 cartItems: [], 
-                qTotal:'',
-
-
+                oId: this.props.match.params.oId,
+                
                 cId: this.props.match.params.cId
               
         }
 
 
-        // this.addProduct = this.addProduct.bind(this);
+        this.confirmOrderHandler = this.confirmOrderHandler.bind(this);
         this.editCartItem = this.editCartItem.bind(this);
         this.deleteCartItemHandler = this.deleteCartItemHandler.bind(this);
-        // this.allProduct = this.allProduct.bind(this);
+        this.backToMarketHandler = this.backToMarketHandler.bind(this);
     }
 
    
@@ -38,22 +38,33 @@ class MyCartComponent extends Component {
         CartItemService.searchcIdItemsByQuery(cId).then((res) => {
             this.setState({ cartItems: res.data});
         });
+
+         // CartItemService.totalBycIdQuery(cId).then((res) => {
+         //    this.setState({ total: res.data});
+        // });
      }
 
-   // allProduct(){
-   //      // console.log(SID);
-   //      // console.log( typeof( SID ));
-   //      this.props.history.push(`/products/${this.state.sId}`);
-   //  }
+   confirmOrderHandler(){
+      
+        this.props.history.push(`/checkout/${this.state.cId}/${this.state.oId}`);
+    }
 
-   //  addProduct(){
-   //      this.props.history.push(`/add-product/${this.state.sId}`);
-   //  }
+    backToMarketHandler(){
+        this.props.history.push(`/market/${this.state.cId}`);
+    }
 
    deleteCartItemHandler(ciId){
+    // CartItemService.getCartItemById(ciId).then( res => 
+    //     this.setState({cartItem: res.data});
+    ProcessedCartItemService.deleteCartItemByCiId(ciId);
     CartItemService.deleteCartItem(ciId).then( res => {
         this.setState({cartItems: this.state.cartItems.filter(cartItem => cartItem.ciId !== ciId)});
     });
+
+
+    CartItemService.totalBycIdQuery(this.state.cId).then((res) => {
+            this.setState({ total: this.state.total});
+        });
     }
     
     editCartItem(ciId){
@@ -77,7 +88,14 @@ class MyCartComponent extends Component {
                 
                 
                  <br></br>
-                 
+                 <div>
+                   <button className="btn btn-primary" id="btn" onClick={this.backToMarketHandler}> Back to Market</button>
+                   
+                                                <button onClick={()=> this.confirmOrderHandler(this.state.cId)} className="btn btn-primary  offset-md-9">Confirm Order</button>
+                                                
+                                             
+                 </div>
+
                  <div className = "row">
                       
 
@@ -122,8 +140,10 @@ class MyCartComponent extends Component {
                                 }
                             </tbody>
                         </table>
+                        
 
                  </div>
+                
                  <br></br><br></br><br></br><br></br>
             </div>
             </div>

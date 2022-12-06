@@ -10,7 +10,7 @@ import { Image } from 'react';
 
 
 
-class AddCartItemComponent extends Component {
+class CreateProcessingCartItem extends Component {
   constructor(props) {
         super(props)
 
@@ -23,10 +23,10 @@ class AddCartItemComponent extends Component {
             iUrl: '',
             qty: '',
             sId:'',
-            oId:this.props.match.params.oId,
-            ciId:'',
+            oId:this.props.match.params.cId,
+            ciId:this.props.match.params.ciId,
             message:'',
-            message2:''
+          
 
                  
         }
@@ -40,17 +40,17 @@ class AddCartItemComponent extends Component {
 
     }
 
-    componentDidMount(){
-        ProductService.getProductById(this.state.id).then( (res) =>{
-            let product = res.data;
-            this.setState({iName: product.pName,
-                iPrice : product.price,
-                iUrl : product.imageUrl,
-                sId: product.sId
+    // componentDidMount(){
+    //     ProductService.getCartItemById(this.state.id).then( (res) =>{
+    //         let product = res.data;
+    //         this.setState({iName: product.pName,
+    //             iPrice : product.price,
+    //             iUrl : product.imageUrl,
+    //             sId: product.sId
                 
-            });
-        });
-    }
+    //         });
+    //     });
+    // }
 
     createCartItemHandler = (e) => {
         e.preventDefault();
@@ -62,6 +62,7 @@ class AddCartItemComponent extends Component {
             // let item = res.data;
             // this.setState({ciId: item.ciId})
             this.setState({ ciId: res.data});
+            this.props.history.push(`/processing/${this.state.cId}${this.state.ciId}${this.state.id}`);
         });
         this.state.message = "Successfully Added to Cart!";
         this.state.message2 = "Go Back";
@@ -77,7 +78,7 @@ class AddCartItemComponent extends Component {
         // console.log('cartItem => ' +JSON.stringify(cartItem));
 
         // CartItemService.createItem(cartItem).then(res =>{
-            //this.props.history.push(`/market/${this.state.cId}`);
+            this.props.history.push(`/processing/${this.state.cId}${this.state.ciId}${this.state.id}`);
         // });
 
         
@@ -113,7 +114,6 @@ class AddCartItemComponent extends Component {
     }
 
     cancel(){
-        
         this.props.history.push(`/market/${this.state.cId}`)
     }
   
@@ -185,7 +185,7 @@ class AddCartItemComponent extends Component {
                         <div class="container">
                             <div class="row">
                                 <div class="col text-center">
-                                    <button className="btn btn-primary" id="btn"  onClick={this.createProcessedCartItemHandler}>Done/Back</button>    </div>
+                                    <button className="btn btn-primary" id="btn"  onClick={this.createProcessedCartItemHandler}>Go Back</button>    </div>
                                  </div>
                             </div>
                         
@@ -195,4 +195,4 @@ class AddCartItemComponent extends Component {
     }
 }
 
-export default AddCartItemComponent
+export default CreateProcessingCartItem

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CartItemService from '../services/CartItemService'
+import ProcessedCartItemService from '../services/ProcessedCartItemService'
 import MarketHeaderComponent from './MarketHeaderComponent'
 
 
@@ -20,7 +21,16 @@ class UpdateCartItemComponent extends Component {
             iName: '',
             iPrice: '',
             iUrl: '',
-            qty: ''
+            qty: '',
+            pciId:'',
+            sId:'',
+            oId:'',
+            pId:'',
+            piName:'',
+            piUrl:'',
+            piPrice:'',
+            pQty:''
+
                  
         }
       // this.changeProductNameHandler = this.changeProductNameHandler.bind(this);
@@ -42,15 +52,33 @@ class UpdateCartItemComponent extends Component {
                 qty: cartItem.qty
             });
         });
+        ProcessedCartItemService.searchciIdItemsByQuery(this.state.ciId).then( (res) =>{
+            let processedCartItem = res.data;
+            this.setState({pciId: processedCartItem.pciId,
+                sId : processedCartItem.sId,
+                pId : processedCartItem.pId,
+                piName: processedCartItem.piName,
+                piUrl: processedCartItem.piUrl,
+                piPrice: processedCartItem.piPrice,
+                pQty: processedCartItem.pQty,
+                oId: processedCartItem.oId
+                
+            });
+        });
     }
 
     updateCartItemHandler = (e) => {
         e.preventDefault();
+
+         let processedCartItem = {pciId: this.state.pciId, cId: this.state.cId, ciId: this.state.ciId, pId: this.state.id, piName: this.state.iName, piPrice: this.state.iPrice, piUrl: this.state.iUrl, pQty: this.state.qty, sId: this.state.sId, oId: this.state.oId}
+         console.log('ProcartItem => ' +JSON.stringify(processedCartItem));
+         ProcessedCartItemService.updatePCartItem(processedCartItem, this.state.pciId);
+
         let cartItem = {ciId: this.state.ciId, cId: this.state.cId, iName: this.state.iName, iPrice: this.state.iPrice, iUrl: this.state.iUrl, qty: this.state.qty}
         // console.log('product => ' +JSON.stringify(product));
 
         CartItemService.updateCartItem(cartItem, this.state.ciId).then(res =>{
-            this.props.history.push(`/my-cart/${this.state.cId}`);
+            this.props.history.push(`/my-cart/${this.state.cId}/${this.state.oId}`);
         });
 
     }
@@ -76,7 +104,7 @@ class UpdateCartItemComponent extends Component {
     }
 
     cancel(){
-        this.props.history.push(`/my-cart/${this.state.cId}`)
+        this.props.history.push(`/my-cart/${this.state.cId}/${this.state.oId}`)
     }
   
     

@@ -16,13 +16,14 @@ class SearchMarketProductComponent extends Component {
 
 
                 cId: this.props.match.params.cId,
+                oId: this.props.match.params.oId,
                 query: this.props.match.params.query
             
                  
         }
 
 
-      
+        this.myCartHandler= this.myCartHandler.bind(this);
         this.allProduct = this.allProduct.bind(this);
         this.mySearchHandler=this.mySearchHandler.bind(this);
         this.addCartProduct=this.addCartProduct.bind(this);
@@ -40,8 +41,12 @@ class SearchMarketProductComponent extends Component {
      }
 
     addCartProduct(id){
-        this.props.history.push(`/add-cart-item/${id}/${this.state.cId}`);
+        this.props.history.push(`/add-cart-item/${id}/${this.state.cId}/${this.state.oId}`);
      }
+
+    myCartHandler(){
+            this.props.history.push(`/my-cart/${this.state.cId}/${this.state.oId}`);
+      }
 
     mySearchHandler= (event) => {
         this.setState({query: event.target.value});
@@ -55,7 +60,7 @@ class SearchMarketProductComponent extends Component {
      mySearch= () => {
             //console.log("query" + this.state.query);
             
-            this.props.history.push(`/search-market-products/${this.state.cId}/${this.state.query}`);
+            this.props.history.push(`/search-market-products/${this.state.cId}/${this.state.query}/${this.state.oId}`);
             
         }
 
@@ -86,7 +91,7 @@ class SearchMarketProductComponent extends Component {
                 
                  <br></br><br></br> 
                  <div>
-                   <button className="btn btn-primary" id="btn" onClick={this.myProduct}> My Cart</button>
+                   <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
                    <button className="btn btn-primary offset-md-11 " id="btn" onClick={this.allProduct}> All Products</button>
                  </div>
                  

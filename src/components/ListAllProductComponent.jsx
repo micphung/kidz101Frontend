@@ -19,6 +19,7 @@ class ListAllProductComponent extends Component {
         this.changesIdHandler= this.changesIdHandler.bind(this);
         this.myProduct=this.myProduct.bind(this);
         this.mySearchHandler=this.mySearchHandler.bind(this);
+        this.handleClick=this.handleClick.bind(this);
     }
 
    
@@ -55,6 +56,10 @@ class ListAllProductComponent extends Component {
             this.props.history.push(`/search-products/${this.state.sId}/${this.state.query}`);
 
         }
+    handleClick() {
+           
+        this.props.history.push(`/seller-orders/${this.state.sId}`);
+  }
 
     render() {
         return (
@@ -62,6 +67,10 @@ class ListAllProductComponent extends Component {
             <div className= "scrollbar-ripe-malinka">
                  <br></br><br></br><br></br><br></br>
                  <h2 className="text-center">Product List</h2>
+                  <div>
+                    <button className="btn btn-primary" onClick={this.handleClick}>Orders</button>
+                   
+                </div>
     
                 
                     <div className = "form-group">

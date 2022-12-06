@@ -9,7 +9,8 @@ class CreateConsumerComponent extends Component {
 
         this.state = {
             cId:'',
-            password: ''
+            password: '',
+            account:''
                  
         }
         this.changecIdHandler = this.changecIdHandler.bind(this);
@@ -42,11 +43,21 @@ class CreateConsumerComponent extends Component {
     }
     
     alreadyMember = (e) => {
-        // e.preventDefault();
-        // let seller = {sFirstName: this.state.sFirstName, sLastName: this.state.sLastName, email: this.state.email, password: this.state.password}
-        // console.log('seller => ' +JSON.stringify(seller));
+        
 
-        this.props.history.push(`/market/${this.state.cId}`);
+        // let account = "";
+        // ConsumerService.validateConsumersId(this.state.cId, this.state.password).then(res =>{
+        //     let account =  res.data});
+        //  this.setState({cId: account.cId, password: "******"});
+                
+            this.props.history.push(`/market/${this.state.cId}`);
+        // let result;
+        // ConsumerService.validateConsumersId(this.state.cId, this.state.password).then(res =>{
+        //     result =  res.data});
+        // if(result){
+        //     console.log(result);
+        //     return(this.props.history.push(`/market/${this.state.cId}`));
+        // }
 
     }
 

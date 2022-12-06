@@ -19,6 +19,13 @@ import SearchMarketProductComponent from './components/SearchMarketProductCompon
 import AddCartItemComponent from './components/AddCartItemComponent';
 import MyCartComponent from './components/MyCartComponent';
 import UpdateCartItemComponent from './components/UpdateCartItemComponent';
+import ConfirmOrderComponent from './components/ConfirmOrderComponent';
+import CreateProcessingCartItem from './components/CreateProcessingCartItem';
+import WelcomePageComponent from './components/WelcomePageComponent';
+import ConsumerOrdersComponent from './components/ConsumerOrdersComponent';
+import ConsumerOrdersDetailsComponent from './components/ConsumerOrdersDetailsComponent';
+import SellerOrdersComponent from './components/SellerOrdersComponent';
+
 
 
 
@@ -29,19 +36,26 @@ function App() {
               <HeaderComponent />
                 <div className="container">
                     <Switch> 
-                          <Route exact path = "/" component = {CreateConsumerComponent}></Route>
+                          <Route exact path = "/" component = {WelcomePageComponent}></Route>
+                          <Route exact path = "/consumerLogin" component = {CreateConsumerComponent}></Route>
                           <Route path = "/sellers" component = {CreateSellerComponent}></Route>
                           <Route exact path = "/products/:sId" component = {ListAllProductComponent}></Route>
                           <Route exact path = "/market/:cId" component = {MarketAllProductComponent}></Route>
                           <Route exact path = "/my-product/:sId" component = {ListSellerProductComponent}></Route>
-                          <Route exact path = "/add-cart-item/:id/:cId" component = {AddCartItemComponent}></Route>
+                          <Route exact path = "/add-cart-item/:id/:cId/:oId" component = {AddCartItemComponent}></Route>
                           <Route exact path = "/search-my-product/:sId/:query" component = {ListSellerProductFilterComponent}></Route>
                           <Route exact path = "/add-product/:sId" component = {CreateProductComponent}></Route>
                           <Route exact path = "/update-product/:id" component = {UpdateProductComponent}></Route>
                           <Route exact path = "/search-products/:sId/:query" component = {SearchProductComponent}></Route>
-                          <Route exact path = "/search-market-products/:cId/:query" component = {SearchMarketProductComponent}></Route>
-                          <Route exact path = "/my-cart/:cId" component = {MyCartComponent}></Route>
+                          <Route exact path = "/search-market-products/:cId/:query/:oId" component = {SearchMarketProductComponent}></Route>
+                          <Route exact path = "/my-cart/:cId/:oId" component = {MyCartComponent}></Route>
                           <Route exact path = "/update-cart-item/:ciId/:cId" component = {UpdateCartItemComponent}></Route>
+                          <Route exact path = "/checkout/:cId/:oId" component = {ConfirmOrderComponent}></Route>
+                          <Route exact path = "/processing/:cId/:ciId/:id" component = {CreateProcessingCartItem}></Route>
+                          <Route exact path = "/my-orders/:cId" component = {ConsumerOrdersComponent}></Route>
+                          <Route exact path = "/view-order-details/:oId/:cId" component = {ConsumerOrdersDetailsComponent}></Route>
+                          
+                         <Route exact path = "/seller-orders/:sId" component = {SellerOrdersComponent}></Route>
 
 
                     </Switch>

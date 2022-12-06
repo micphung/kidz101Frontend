@@ -26,6 +26,9 @@ class ConsumerService{
     getConsumertById(cId){
     	return axios.get(CONSUMER_API_BASE_URL + '/searchcId?cId=' + cId);
     }
+    validateConsumersId(cId, password){
+    	return axios.get(CONSUMER_API_BASE_URL + '/validate?cId=' + cId + '&password=' + password);
+    }
     
 }
 export default new ConsumerService()
