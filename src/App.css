@@ -1,3 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+#logo {
+  height: auto;
+  max-width: 70%;
+}
+
+/* #logo:hover {
+  background-color: lightblue;
+} */
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100%;
+  background-image: linear-gradient(#eda130, #ffe5b0);
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#idHeader {
+  max-width: 50%;
+  float: left;
+  color: black;
+  background-color: #faa61a;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#searchBar {
+  max-width: 40%;
+  float: right;
+}
+
+#searchButton {
+  max-width: 20%;
+  margin: auto;
+}
+
+
+#imgCenter {
+  text-align: center;
+}
+
+#loginContainer {
+  justify-content: center;
+  width: 900px;
+}
+
+#test {
+  padding-bottom: 45px;
+  padding-top: 25px;
+  justify-content: space-evenly;
+}
+
+#test2 {
+  padding-bottom: 45px;
+  padding-top: 25px;
+  justify-content: space-evenly;
+  background: white;
+  background: linear-gradient(to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+}
+
+#test3 {
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+
+  max-width: 18%;
+  justify-content: space-evenly;
+  background: white;
+  background: linear-gradient(to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+
+}
+
+#test4 {
+  padding-bottom: 45px;
+  min-width: 130%;
+  justify-content: space-evenly;
+  background: white;
+  background: linear-gradient(to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+}
+
+#headerImage {
+  margin: auto;
+  /* min-width: 100%;
+  min-height: 100%; */
+  /* min-width: 116%;
+  margin-left: -7%; */
+  min-height: 300px;
+  justify-content: space-evenly;
+  background-image: url(http://itssonecessary.com/wp-content/uploads/2020/12/Christmas-Gifts-Ever.jpg);
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  /* background-position: top; */
+  background-size: 100% 100%;
+  /* border-radius: 2rem; */
+  backdrop-filter: blur(2rem);
+}
+
+#table {
+  max-width: 90%;
+  margin-left: 5%;
+  margin-top: 2%;
+  /* justify-content: space-evenly; */
+  background: white;
+  background: linear-gradient(to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+}
+
+#allProducts {
+  margin-top: 70px;
+  margin-left: -400px;
+  /* min-width: 130%;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+
+}
+
+#header {
+  padding-top: 1%;
+  padding-right: 1%;
+  padding-left: 1%;
+  line-height: 18px;
+  word-break: break-word;
+  overflow: hidden;
+  /* background: orange; */
+
+  margin-top: 5%;
+}
+
+#btnCart {
+  align-items: right;
+  float: right;
+  margin-right: 1.5%;
+  margin-top: 10%;
+
+}
+
+#btnCart2 {
+  align-items: left;
+  float: left;
+  margin-left: -29%;
+  margin-top: 13%;
+  min-width: 20%;
+}
+
+#btnCart3 {
+  align-items: left;
+  float: left;
+  margin-top: 8%;
+}
+
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(to right bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.3));
+  height: 15rem;
+  width: 15rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  top: 5%;
+  right: -25%;
+}
+
+.circle2 {
+  bottom: 5%;
+  left: -25%;
+}
+
+h3,
+.card {
+  margin-top: 25px;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+#forgotPass {
+  color: gray;
+  align-items: right;
+}
+
+header {
+  background-color: white;
+  color: black;
+}
+
+header a,
+header a:hover {
+  color: black;
+}
+
+.container {
+  width: 900px;
+  height: auto;
+  margin: 0px auto;
+  position: relative;
+}
+
+#loginContainer2,
+#loginContainer3 {
+  margin-top: 100px;
+}
+
+/* .btn-primary {
+  background-color: yellow;
+} */
+
+/* .row {
+  padding-bottom: 75px;
+  padding-top: 20px;
+} */
 
 
 
@@ -16,17 +254,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -35,6 +262,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -54,22 +282,23 @@
 .footer {
   position: absolute;
   bottom: 0;
-  width:100%;
+  width: 100%;
   height: 50px;
-  background-color: black;
+  background-color: #282c34;
   text-align: center;
   color: white;
-  
 }
-.btn{
-  width:100;
+
+.btn {
+  width: 100;
   length: 100;
+  margin-left: 10%;
 }
 
 .centerButton {
   text-align: center;
- }
+}
 
- .toTheRight{
+.toTheRight {
   text-align: right;
- }
+}
