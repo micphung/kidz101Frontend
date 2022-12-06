@@ -53,14 +53,12 @@ class CreateSellerComponent extends Component {
     render() {
         return (
 
-            <div>
+            <div class="justify-content-center" id="loginContainer2">
                 <SellerHeaderComponent />
-                <div className="row">
-                    <div className="card col-md-10 ">
-                        <br></br><br></br><br></br><br></br>
-                        <h1 className="text-center">Sellers Portal</h1>
+                <div id="loginContainer" className="row">
+                    <div id="test" className="card col-md-10">
+                        <h1 className="text-center">Seller Portal</h1>
                         <div className="row">
-
                             <div className="card col-md-10 offset-md-1">
                                 <form>
                                     <h3> Member Login</h3>
@@ -74,47 +72,32 @@ class CreateSellerComponent extends Component {
                                         <input placeholder="Password" name="password" className="form-control"
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
-
-                                    <button className="btn btn-primary  offset-md" onClick={this.alreadyMember}> Login</button>
+                                    <div class="loginButton">
+                                        <button id="loginButtons" className="btn btn-primary" onClick={this.alreadyMember}> Login</button>
+                                        <button id="forgotPass" className="btn ml-auto" onClick={this.alreadyMember}> Forgot Password?</button>
+                                    </div>
                                 </form>
-
                             </div>
-                            <br></br><br></br><br></br><br></br> <br></br><br></br><br></br><br></br> <br></br><br></br><br></br><br></br>
-                            <div className="card col-md-10 offset-md-1">
+                            <div id="createAccount" className="card col-md-10 offset-md-1">
                                 <form>
-
                                     <h3> Create Account</h3>
-
-
                                     <div className="form-group">
                                         <label> Personal Seller ID Number: </label>
                                         <input placeholder="Choose your personal seller id number" name="sId" className="form-control"
                                             value={this.state.sId} onChange={this.changesIdHandler} />
                                     </div>
-
-
                                     <div className="form-group">
                                         <label> Password:</label>
                                         <input placeholder="Password" name="password" className="form-control"
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
-
-
-                                    <div className="centerButton">
-
-
-                                        <button className="btn btn-success" onClick={this.saveProduct}>Save</button>
+                                    <div class="signupButton">
+                                        <button id="loginButtons" className="btn btn-success" onClick={this.saveProduct}>Create Account</button>
                                         {/*<button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>*/}
                                     </div>
-
                                 </form>
                             </div>
-
-
-
                         </div>
-
-
                     </div>
                 </div>
             </div>
