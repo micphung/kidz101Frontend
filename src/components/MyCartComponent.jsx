@@ -15,11 +15,11 @@ class MyCartComponent extends Component {
 
         //we initialize an array products - need to make a call to restAPI and store list in products array 
         this.state = {
-                cartItems: [], 
-                oId: this.props.match.params.oId,
-                
-                cId: this.props.match.params.cId
-              
+            cartItems: [],
+            oId: this.props.match.params.oId,
+
+            cId: this.props.match.params.cId
+
         }
 
 
@@ -29,84 +29,74 @@ class MyCartComponent extends Component {
         this.backToMarketHandler = this.backToMarketHandler.bind(this);
     }
 
-   
-  
 
-    componentDidMount(){
+
+
+    componentDidMount() {
         let cId = this.state.cId;
 
         CartItemService.searchcIdItemsByQuery(cId).then((res) => {
-            this.setState({ cartItems: res.data});
+            this.setState({ cartItems: res.data });
         });
 
-         // CartItemService.totalBycIdQuery(cId).then((res) => {
-         //    this.setState({ total: res.data});
+        // CartItemService.totalBycIdQuery(cId).then((res) => {
+        //    this.setState({ total: res.data});
         // });
-     }
+    }
 
-   confirmOrderHandler(){
-      
+    confirmOrderHandler() {
+
         this.props.history.push(`/checkout/${this.state.cId}/${this.state.oId}`);
     }
 
-    backToMarketHandler(){
+    backToMarketHandler() {
         this.props.history.push(`/market/${this.state.cId}`);
     }
 
-   deleteCartItemHandler(ciId){
-    // CartItemService.getCartItemById(ciId).then( res => 
-    //     this.setState({cartItem: res.data});
-    ProcessedCartItemService.deleteCartItemByCiId(ciId);
-    CartItemService.deleteCartItem(ciId).then( res => {
-        this.setState({cartItems: this.state.cartItems.filter(cartItem => cartItem.ciId !== ciId)});
-    });
+    deleteCartItemHandler(ciId) {
+        // CartItemService.getCartItemById(ciId).then( res => 
+        //     this.setState({cartItem: res.data});
+        ProcessedCartItemService.deleteCartItemByCiId(ciId);
+        CartItemService.deleteCartItem(ciId).then(res => {
+            this.setState({ cartItems: this.state.cartItems.filter(cartItem => cartItem.ciId !== ciId) });
+        });
 
 
-    CartItemService.totalBycIdQuery(this.state.cId).then((res) => {
-            this.setState({ total: this.state.total});
+        CartItemService.totalBycIdQuery(this.state.cId).then((res) => {
+            this.setState({ total: this.state.total });
         });
     }
-    
-    editCartItem(ciId){
+
+    editCartItem(ciId) {
         this.props.history.push(`/update-cart-item/${ciId}/${this.state.cId}`);
     }
 
     render() {
         return (
-           <div>
-           <MarketHeaderComponent/>
-            <div className= "scrollbar-ripe-malinka">
-                 <br></br><br></br><br></br><br></br>
-                 <h2 className="text-center">Your Cart</h2>
-                 <div className = "form-group">
-                    <label> Your ID </label>
-                    <br></br>
-                    <input name="cId"
-                        value={this.state.cId}/>
+            <div id="allProducts">
+                <MarketHeaderComponent />
+                <div id="test4" className="scrollbar-ripe-malinka">
+                    <div id="headerImage">
+                        <div id="header">
+                            <h2 id="idHeader" className="text-center">Your Cart - ID:{this.state.cId} &nbsp;&nbsp;</h2>
+                        </div>
+                        <div id="btnCart6">
+                            <button className="btn btn-primary" onClick={this.backToMarketHandler}> Back to Market</button>
+                            <button onClick={() => this.confirmOrderHandler(this.state.cId)} className="btn btn-primary  offset-md-9">Confirm Order</button>
+                        </div>
+                    </div>
 
-                </div>
-                
-                
-                 <br></br>
-                 <div>
-                   <button className="btn btn-primary" id="btn" onClick={this.backToMarketHandler}> Back to Market</button>
-                   
-                                                <button onClick={()=> this.confirmOrderHandler(this.state.cId)} className="btn btn-primary  offset-md-9">Confirm Order</button>
-                                                
-                                             
-                 </div>
-
-                 <div className = "row">
-                      
+                    <div className="row">
 
 
-                        <table className = "table table-striped table-bordered">
+
+                        <table id="table" className="table table-striped table-bordered">
 
                             <thead>
                                 <tr>
-                                    
+
                                     <th> Product Name</th>
-                                
+
                                     <th> Unit Price</th>
                                     <th> Image URL</th>
                                     <th> Quantity</th>
@@ -115,37 +105,37 @@ class MyCartComponent extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                         
+
                                 {
                                     // we are doing to iterate array products
-                                    this.state.cartItems.map( 
-                                        cartItem => 
-                                        
-                                        <tr key = {cartItem.ciId}>
+                                    this.state.cartItems.map(
+                                        cartItem =>
 
-                                             
-                                             <td> {cartItem.iName} </td>   
-                                            
-                                             <td> {cartItem.iPrice}</td>
-                                             <td> <img src= {cartItem.iUrl}  width="200" height="200" /></td>
-                                             <td> {cartItem.qty}</td>
-                                             <td>  {(cartItem.qty * cartItem.iPrice)}</td>
-                                             <td className = "centerButton">
-                                                <button onClick={()=> this.editCartItem(cartItem.ciId)} className="btn btn-info">Edit </button>
-                                                <button style={{marginLeft: "10px"}} onClick={ () => this.deleteCartItemHandler(cartItem.ciId)} className="btn btn-danger">Remove </button>
-                                             </td>
-                                        </tr>
+                                            <tr key={cartItem.ciId}>
+
+
+                                                <td> {cartItem.iName} </td>
+
+                                                <td> {cartItem.iPrice}</td>
+                                                <td> <img src={cartItem.iUrl} width="200" height="200" /></td>
+                                                <td> {cartItem.qty}</td>
+                                                <td>  {(cartItem.qty * cartItem.iPrice)}</td>
+                                                <td className="centerButton">
+                                                    <button onClick={() => this.editCartItem(cartItem.ciId)} className="btn btn-info">Edit </button>
+                                                    <button style={{ marginLeft: "10px" }} onClick={() => this.deleteCartItemHandler(cartItem.ciId)} className="btn btn-danger">Remove </button>
+                                                </td>
+                                            </tr>
 
                                     )
                                 }
                             </tbody>
                         </table>
-                        
 
-                 </div>
-                
-                 <br></br><br></br><br></br><br></br>
-            </div>
+
+                    </div>
+
+                    <br></br><br></br><br></br><br></br>
+                </div>
             </div>
 
         )

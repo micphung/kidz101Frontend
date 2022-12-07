@@ -67,78 +67,72 @@ class SearchMarketProductComponent extends Component {
     render() {
         return (
 
-            <div className="scrollbar-ripe-malinka">
+            <div id="allProducts" className="scrollbar-ripe-malinka">
                 <MarketHeaderComponent />
-                <br></br><br></br><br></br><br></br>
-                <h2 className="text-center">Product List</h2>
+                <div id="test4">
+                    <div id="headerImage">
+                        <div id="header">
+                            <h2 id="idHeader" className="text-center">Product List - ID: {this.state.cId}</h2>
+                            <div id="searchBar" className="input-group rounded">
+                                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                                    aria-describedby="search-addon" value={this.state.query} onChange={this.mySearchHandler} />
+                                <button id="searchButton" className="btn btn-primary" onClick={this.mySearch}>Find</button>
+                                {/* <span class="input-group-text border-0" id="search-addon">
+                                            <i class="fas fa-search"></i>
+                                        </span> */}
+                            </div>
+                        </div>
+
+                        <div id="btnCart6">
+                            <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
+                            <button className="btn btn-primary offset-md-11 " id="btn" onClick={this.allProduct}> All Products</button>
+                        </div>
+                    </div>
+
+                    <div className="row">
 
 
-                <div className="form-group">
-                    <label> Your ID </label>
-                    <br></br>
-                    <input name="cId"
-                        value={this.state.cId} />
+
+                        <table id="table" className="table table-striped table-bordered">
+
+                            <thead>
+                                <tr>
+
+                                    <th> Product Name</th>
+                                    <th> Department</th>
+                                    <th> Price</th>
+                                    <th> Image URL</th>
+                                    <th> Quantity</th>
+                                    <th> Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {
+                                    // we are doing to iterate array products
+                                    this.state.products.map(
+                                        product =>
+
+                                            <tr key={product.id}>
+
+
+                                                <td> {product.pName} </td>
+                                                <td> {product.department}</td>
+                                                <td> {product.price}</td>
+                                                <td> <img src={product.imageUrl} width="200" height="200" /></td>
+                                                <td> {product.quantity}</td>
+                                                <td className="centerButton">
+                                                    <button onClick={() => this.addCartProduct(product.id)} className="btn btn-info">Add</button>
+                                                </td>
+                                            </tr>
+
+                                    )
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
-                <div className="form-group">
-                    <label> Search:  </label>
-                    <br></br>
-                    <input name="query"
-                        value={this.state.query} onChange={this.mySearchHandler} />
-                    <br></br><br></br>
-                    <button className="btn btn-primary" onClick={this.mySearch}>Find</button>
-
-                </div>
-
-                <br></br><br></br>
-                <div>
-                    <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
-                    <button className="btn btn-primary offset-md-11 " id="btn" onClick={this.allProduct}> All Products</button>
-                </div>
-
-                <div className="row">
-
-
-
-                    <table className="table table-striped table-bordered">
-
-                        <thead>
-                            <tr>
-
-                                <th> Product Name</th>
-                                <th> Department</th>
-                                <th> Price</th>
-                                <th> Image URL</th>
-                                <th> Quantity</th>
-                                <th> Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            {
-                                // we are doing to iterate array products
-                                this.state.products.map(
-                                    product =>
-
-                                        <tr key={product.id}>
-
-
-                                            <td> {product.pName} </td>
-                                            <td> {product.department}</td>
-                                            <td> {product.price}</td>
-                                            <td> <img src={product.imageUrl} width="200" height="200" /></td>
-                                            <td> {product.quantity}</td>
-                                            <td className="centerButton">
-                                                <button onClick={() => this.addCartProduct(product.id)} className="btn btn-info">Add</button>
-                                            </td>
-                                        </tr>
-
-                                )
-                            }
-                        </tbody>
-                    </table>
-
-                </div>
-                <br></br><br></br><br></br><br></br>
             </div>
 
         )

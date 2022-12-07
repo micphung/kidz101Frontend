@@ -71,34 +71,23 @@ class ConsumerOrdersDetailsComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div id="allProducts">
                 <MarketHeaderComponent />
-                <div className="scrollbar-ripe-malinka">
-                    <br></br><br></br><br></br><br></br>
-                    <h2 className="text-center">Order Details</h2>
-                    <div className="form-group">
-                        <label> Order # </label>
-                        <br></br>
-                        <input name="oId"
-                            value={this.state.oId} />
-
-                    </div>
-
-
-                    <br></br>
-                    <div>
-                        <button className="btn btn-primary" id="btn" onClick={this.cancel}>All Orders</button>
-
-
-
-
+                <div id="test4" className="scrollbar-ripe-malinka">
+                    <div id="headerImage">
+                        <div id="header">
+                            <h2 id="idHeader" className="text-center">Order Details - Order #: {this.state.oId}</h2>
+                        </div>
+                        <div id="btnCart5">
+                            <button className="btn btn-primary" id="btn" onClick={this.cancel}>All Orders</button>
+                        </div>
                     </div>
 
                     <div className="row">
 
 
 
-                        <table className="table table-striped table-bordered">
+                        <table id="table" className="table table-striped table-bordered">
 
                             <thead>
                                 <tr>

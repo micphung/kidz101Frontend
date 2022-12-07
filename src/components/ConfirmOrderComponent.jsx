@@ -104,98 +104,85 @@ class ConfirmOrderComponent extends Component {
     render() {
         return (
 
-            <div className="scrollbar-ripe-malinka">
+            <div id="loginContainer3" className="scrollbar-ripe-malinka">
                 <MarketHeaderComponent />
-                <br></br><br></br><br></br><br></br>
-                <h2 className="text-center">Kidz101</h2>
+                <div id="loginContainer">
+                    <div id="test2">
+                        <div id="headerImage2">
+                            <div id="header">
+                                <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> ID:{this.state.cId} &nbsp;&nbsp;</h2>
+                            </div>
 
-
-                <div className="form-group">
-                    <label> Your ID </label>
-                    <br></br>
-                    <input name="cId"
-                        value={this.state.cId} />
-                </div>
-
-                <br></br><br></br>
-                <div>
-                    <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
-                </div>
-
-                <div className="row">
-
-
-                    <br></br><br></br>
-                    <div className="row">
-
-                        <table className="table table-striped table-bordered">
-                            <tr>
-                                <th>Order Details</th>
-                                <th>  </th>
-                            </tr>
-                            <tr>
-                                <th>Subtotal</th>
-                                <th> {this.state.total} </th>
-                            </tr>
-                            <tr>
-                                <th>Tax 7.25 %</th>
-                                <th> {((this.state.total) * (0.0725)).toFixed(2)} </th>
-                            </tr>
-                            <tr>
-                                <th>Shipping Fee</th>
-                                <th> 10 </th>
-                            </tr>
-                            <tr>
-                                <th>Total</th>
-                                <th> {((this.state.total) + ((this.state.total) * (0.0725)) + 10)} </th>
-                            </tr>
-                        </table>
-
-                        <div className="card-body">
-                            <form>
-
-                                <div className="form-group">
-                                    <label> Payment Card: </label>
-                                    <input placeholder="Enter Card Number" name="cardNumber" className="form-control"
-                                        value={this.state.cardNumber} onChange={this.changeCardNumberHandler} />
-                                </div>
-                                <div className="form-group">
-                                    <label> Street Address: </label>
-                                    <input placeholder="Enter your street addressr" name="street" className="form-control"
-                                        value={this.state.street} onChange={this.changeStreetHandler} />
-                                </div>
-                                <div className="form-group">
-                                    <label> City: </label>
-                                    <input placeholder="City name here" name="city" className="form-control"
-                                        value={this.state.city} onChange={this.changeCityHandler} />
-                                </div>
-                                <div className="form-group">
-                                    <label> State: </label>
-                                    <input placeholder="Example: CA " name="state" className="form-control"
-                                        value={this.state.state} onChange={this.changeStateHandler} />
-                                </div>
-                                <div className="form-group">
-                                    <label> Zip: </label>
-                                    <input placeholder="Enter zip number here" name="zip" className="form-control"
-                                        value={this.state.zip} onChange={this.changeZipHandler} />
-                                </div>
-                                <div className="centerButton">
-                                    <button className="btn btn-success" onClick={this.confirmPaymentHandler}>Confirm Order</button>
-                                </div>
-                            </form>
+                            <div id="btnCart5">
+                                <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
+                            </div>
                         </div>
+                        <div id="paymentProcess">
 
+                            <div className="row">
+                                <div className="row">
 
+                                    <table id="table2" className="table table-striped table-bordered">
+                                        <tr>
+                                            <th>Order Details</th>
+                                            <th>  </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Subtotal</th>
+                                            <th> {this.state.total} </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Tax 7.25 %</th>
+                                            <th> {((this.state.total) * (0.0725)).toFixed(2)} </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Shipping Fee</th>
+                                            <th> 10 </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Total</th>
+                                            <th> {((this.state.total) + ((this.state.total) * (0.0725)) + 10)} </th>
+                                        </tr>
+                                    </table>
 
+                                    <div className="card-body">
+                                        <form>
 
-
+                                            <div className="form-group">
+                                                <label> Payment Card: </label>
+                                                <input placeholder="Enter Card Number" name="cardNumber" className="form-control"
+                                                    value={this.state.cardNumber} onChange={this.changeCardNumberHandler} />
+                                            </div>
+                                            <div className="form-group">
+                                                <label> Street Address: </label>
+                                                <input placeholder="Enter your street addressr" name="street" className="form-control"
+                                                    value={this.state.street} onChange={this.changeStreetHandler} />
+                                            </div>
+                                            <div className="form-group">
+                                                <label> City: </label>
+                                                <input placeholder="City name here" name="city" className="form-control"
+                                                    value={this.state.city} onChange={this.changeCityHandler} />
+                                            </div>
+                                            <div className="form-group">
+                                                <label> State: </label>
+                                                <input placeholder="Example: CA " name="state" className="form-control"
+                                                    value={this.state.state} onChange={this.changeStateHandler} />
+                                            </div>
+                                            <div className="form-group">
+                                                <label> Zip: </label>
+                                                <input placeholder="Enter zip number here" name="zip" className="form-control"
+                                                    value={this.state.zip} onChange={this.changeZipHandler} />
+                                            </div>
+                                            <div className="centerButton">
+                                                <button className="btn btn-success" onClick={this.confirmPaymentHandler}>Confirm Order</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
-
                 </div>
-
-                <br></br><br></br><br></br><br></br>
             </div>
 
         )

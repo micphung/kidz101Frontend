@@ -36,6 +36,10 @@ body {
 
 }
 
+#paymentProcess {
+  padding-left: 30%;
+}
+
 #idHeader {
   max-width: 50%;
   float: left;
@@ -125,6 +129,20 @@ body {
   backdrop-filter: blur(2rem);
 }
 
+#headerImage2 {
+  margin-top: -8%;
+  min-height: 300px;
+  justify-content: space-evenly;
+  background-image: url('/public/christmasHeader.JPG');
+  ;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  /* background-position: top; */
+  background-size: 100% 100%;
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+}
+
 #loginButtons {
   margin: auto;
 }
@@ -152,6 +170,19 @@ body {
 #table {
   max-width: 90%;
   margin-left: 5%;
+  margin-top: 2%;
+  /* justify-content: space-evenly; */
+  background: white;
+  background: linear-gradient(to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  backdrop-filter: blur(2rem);
+}
+
+#table2 {
+  max-width: 90%;
+  border-left: 50%;
   margin-top: 2%;
   /* justify-content: space-evenly; */
   background: white;
@@ -226,7 +257,16 @@ body {
   align-content: center; */
   margin-top: 10%;
   min-width: 150px;
+}
 
+#btnCart6 {
+  align-items: left;
+  float: left;
+  /* align-self: center;
+  align-content: center; */
+  margin-top: 8%;
+  margin-left: -1%;
+  min-width: 150px;
 }
 
 #signupButton {
