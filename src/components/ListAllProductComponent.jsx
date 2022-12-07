@@ -81,7 +81,7 @@ class ListAllProductComponent extends Component {
 
                         <div id="btnCart3">
                             <div>
-                                <button className="btn btn-primary" onClick={this.myProduct}> My Products</button>
+                                <button className="btn btn-primary" onClick={this.myProduct}>My Products</button>
                             </div>
                             <div>
                                 <button className="btn btn-primary" onClick={this.handleClick}>Orders</button>

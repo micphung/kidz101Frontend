@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ProductService from '../services/ProductService'
 
 import ConsumerService from '../services/ConsumerService'
+
+import CartItemService from '../services/CartItemService'
 import MarketHeaderComponent from './MarketHeaderComponent'
 
 
@@ -16,12 +18,14 @@ class MarketAllProductComponent extends Component {
         this.state = {
             products: [],
             cId: this.props.match.params.cId,
-            query: ''
+            query: '',
+            oId: 0
         }
 
         this.myCartHandler = this.myCartHandler.bind(this);
         this.addCartProduct = this.addCartProduct.bind(this);
         this.mySearchHandler = this.mySearchHandler.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
 
@@ -32,10 +36,22 @@ class MarketAllProductComponent extends Component {
         ProductService.getProducts().then((res) => {
             this.setState({ products: res.data });
         });
+
+        //search for cart items if found get one item and search oid in processed cart items by ciid
+        CartItemService.cIdExistsfromCartItems(this.state.cId).then((res) => {
+            this.setState({ oId: res.data });
+        });
+
     }
 
+    handleClick() {
+
+        this.props.history.push(`/my-orders/${this.state.cId}`);
+    }
+
+
     addCartProduct(id) {
-        this.props.history.push(`/add-cart-item/${id}/${this.state.cId}`);
+        this.props.history.push(`/add-cart-item/${id}/${this.state.cId}/${this.state.oId}`);
     }
 
     // changesIdHandler= (event) => {
@@ -46,14 +62,14 @@ class MarketAllProductComponent extends Component {
     }
 
     myCartHandler() {
-        this.props.history.push(`/my-cart/${this.state.cId}`);
+        this.props.history.push(`/my-cart/${this.state.cId}/${this.state.oId}`);
     }
 
 
     mySearch = () => {
         //console.log("query" + this.state.query);
 
-        this.props.history.push(`/search-market-products/${this.state.cId}/${this.state.query}`);
+        this.props.history.push(`/search-market-products/${this.state.cId}/${this.state.query}/${this.state.oId}`);
 
     }
 
@@ -83,7 +99,7 @@ class MarketAllProductComponent extends Component {
                         </div>
                         <div id="btnCart3">
                             <div>
-                                <button className="btn btn-primary" id="btnCart" onClick={this.myCartHandler}> My Cart</button>
+                                <button className="btn btn-primary" onClick={this.myCartHandler}>My Cart</button>
                             </div>
                             <div>
                                 <button className="btn btn-primary" onClick={this.handleClick}>Orders</button>
