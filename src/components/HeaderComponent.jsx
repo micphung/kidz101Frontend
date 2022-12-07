@@ -5,7 +5,7 @@ class HeaderComponent extends Component {
         super(props)
 
         this.state = {
-                 
+
         }
     }
 
@@ -13,10 +13,10 @@ class HeaderComponent extends Component {
         return (
             <div className="fixed-top">
                 <header>
-                    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href=""className="navbar-brand">Seller Product Management</a></div>
+                    <nav className="navbar navbar-expand-md">
+                        <div><a href="" className="navbar-brand"><img id="logo" src="/kidzLogo.png" alt="logo" /></a></div>
 
-                    <div className="offset-md-8"><a href="http://localhost:3000/" className="navbar-brand">Sign Out</a></div>
+                        <div className="navbar-nav ml-auto"><a href="http://localhost:3000/" className="navbar-brand">Sign Out</a></div>
                     </nav>
                 </header>
             </div>

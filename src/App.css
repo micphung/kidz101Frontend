@@ -21,6 +21,21 @@ body {
   background-attachment: fixed;
 }
 
+#welcomePage {
+  margin-top: 200px;
+  padding-top: 20px;
+  justify-content: end;
+  justify-items: end;
+  justify-self: end;
+}
+
+#welcomeButtons {
+  padding-left: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+}
+
 #idHeader {
   max-width: 50%;
   float: left;
@@ -97,19 +112,16 @@ body {
 }
 
 #headerImage {
-  margin: auto;
-  /* min-width: 100%;
-  min-height: 100%; */
-  /* min-width: 116%;
-  margin-left: -7%; */
+
   min-height: 300px;
   justify-content: space-evenly;
-  background-image: url(http://itssonecessary.com/wp-content/uploads/2020/12/Christmas-Gifts-Ever.jpg);
+  background-image: url('/public/christmasHeader.JPG');
+  ;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
   /* background-position: top; */
   background-size: 100% 100%;
-  /* border-radius: 2rem; */
+  border-radius: 2rem;
   backdrop-filter: blur(2rem);
 }
 
@@ -191,7 +203,11 @@ body {
 #btnCart3 {
   align-items: left;
   float: left;
-  margin-top: 8%;
+  /* align-self: center;
+  align-content: center; */
+  margin-top: 5%;
+  min-width: 150px;
+
 }
 
 #signupButton {

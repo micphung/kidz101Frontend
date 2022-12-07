@@ -5,7 +5,7 @@ class WelcomePageHeaderComponent extends Component {
         super(props)
 
         this.state = {
-                 
+
         }
     }
 
@@ -13,10 +13,10 @@ class WelcomePageHeaderComponent extends Component {
         return (
             <div className="fixed-top">
                 <header>
-                    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href=""className="navbar-brand">Kidz101</a></div>
+                    <nav className="navbar navbar-expand-md" id="loginBox">
+                        <div><a href="" className="navbar-brand"><img id="logo" src="/kidzLogo.png" alt="logo" /></a></div>
 
-                    
+
                     </nav>
                 </header>
             </div>
