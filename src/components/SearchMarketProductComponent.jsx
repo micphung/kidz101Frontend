@@ -12,98 +12,92 @@ class SearchMarketProductComponent extends Component {
 
         //we initialize an array products - need to make a call to restAPI and store list in products array 
         this.state = {
-                products: [], 
+            products: [],
 
 
-                cId: this.props.match.params.cId,
-                oId: this.props.match.params.oId,
-                query: this.props.match.params.query
-            
-                 
+            cId: this.props.match.params.cId,
+            oId: this.props.match.params.oId,
+            query: this.props.match.params.query
+
+
         }
 
 
-        this.myCartHandler= this.myCartHandler.bind(this);
+        this.myCartHandler = this.myCartHandler.bind(this);
         this.allProduct = this.allProduct.bind(this);
-        this.mySearchHandler=this.mySearchHandler.bind(this);
-        this.addCartProduct=this.addCartProduct.bind(this);
+        this.mySearchHandler = this.mySearchHandler.bind(this);
+        this.addCartProduct = this.addCartProduct.bind(this);
     }
 
-   
-  
 
-    componentDidMount(){
+
+
+    componentDidMount() {
         let cId = this.state.cId;
         let query = this.state.query;
         ProductService.searchProductsByQuery(query).then((res) => {
-            this.setState({ products: res.data});
+            this.setState({ products: res.data });
         });
-     }
-
-    addCartProduct(id){
-        this.props.history.push(`/add-cart-item/${id}/${this.state.cId}/${this.state.oId}`);
-     }
-
-    myCartHandler(){
-            this.props.history.push(`/my-cart/${this.state.cId}/${this.state.oId}`);
-      }
-
-    mySearchHandler= (event) => {
-        this.setState({query: event.target.value});
     }
-   allProduct(){
+
+    addCartProduct(id) {
+        this.props.history.push(`/add-cart-item/${id}/${this.state.cId}/${this.state.oId}`);
+    }
+
+    myCartHandler() {
+        this.props.history.push(`/my-cart/${this.state.cId}/${this.state.oId}`);
+    }
+
+    mySearchHandler = (event) => {
+        this.setState({ query: event.target.value });
+    }
+    allProduct() {
         // console.log(SID);
         // console.log( typeof( SID ));
         this.props.history.push(`/market/${this.state.cId}`);
     }
 
-     mySearch= () => {
-            //console.log("query" + this.state.query);
-            
-            this.props.history.push(`/search-market-products/${this.state.cId}/${this.state.query}/${this.state.oId}`);
-            
-        }
+    mySearch = () => {
+        //console.log("query" + this.state.query);
+
+        this.props.history.push(`/search-market-products/${this.state.cId}/${this.state.query}/${this.state.oId}`);
+
+    }
 
     render() {
         return (
-           
-            <div className= "scrollbar-ripe-malinka">
-            <MarketHeaderComponent/>
-                    <br></br><br></br><br></br><br></br>
-                 <h2 className="text-center">Product List</h2>
-    
-                
-                    <div className = "form-group">
-                    <label> Your ID </label>
-                    <br></br>
-                    <input name="cId"
-                        value={this.state.cId}/>
+
+            <div id="allProducts" className="scrollbar-ripe-malinka">
+                <MarketHeaderComponent />
+                <div id="test4">
+                    <div id="headerImage">
+                        <div id="header">
+                            <h2 id="idHeader" className="text-center">Product List - ID: {this.state.cId}</h2>
+                            <div id="searchBar" className="input-group rounded">
+                                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                                    aria-describedby="search-addon" value={this.state.query} onChange={this.mySearchHandler} />
+                                <button id="searchButton" className="btn btn-primary" onClick={this.mySearch}>Find</button>
+                                {/* <span class="input-group-text border-0" id="search-addon">
+                                            <i class="fas fa-search"></i>
+                                        </span> */}
+                            </div>
+                        </div>
+
+                        <div id="btnCart6">
+                            <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
+                            <button className="btn btn-primary offset-md-11 " id="btn" onClick={this.allProduct}> All Products</button>
+                        </div>
                     </div>
-                    <div className = "form-group">
-                        <label> Search:  </label>
-                    <br></br>
-                    <input name="query"
-                        value={this.state.query} onChange={this.mySearchHandler}/>
-                        <br></br><br></br>
-                         <button className="btn btn-primary" onClick={this.mySearch}>Find</button>
 
-                </div>
-                
-                 <br></br><br></br> 
-                 <div>
-                   <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
-                   <button className="btn btn-primary offset-md-11 " id="btn" onClick={this.allProduct}> All Products</button>
-                 </div>
-                 
-                 <div className = "row">
-                      
+                    <div className="row">
 
 
-                        <table className = "table table-striped table-bordered">
+
+                        <table id="table" className="table table-striped table-bordered">
 
                             <thead>
                                 <tr>
-                                    
+
                                     <th> Product Name</th>
                                     <th> Department</th>
                                     <th> Price</th>
@@ -113,32 +107,32 @@ class SearchMarketProductComponent extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                         
+
                                 {
                                     // we are doing to iterate array products
-                                    this.state.products.map( 
-                                        product => 
-                                        
-                                        <tr key = {product.id}>
+                                    this.state.products.map(
+                                        product =>
 
-                                             
-                                             <td> {product.pName} </td>   
-                                             <td> {product.department}</td>
-                                             <td> {product.price}</td>
-                                             <td> <img src= {product.imageUrl}  width="200" height="200" /></td>
-                                             <td> {product.quantity}</td>
-                                             <td className = "centerButton">
-                                                <button onClick={()=> this.addCartProduct(product.id)} className="btn btn-info">Add</button>
-                                             </td>
-                                        </tr>
+                                            <tr key={product.id}>
+
+
+                                                <td> {product.pName} </td>
+                                                <td> {product.department}</td>
+                                                <td> {product.price}</td>
+                                                <td> <img src={product.imageUrl} width="200" height="200" /></td>
+                                                <td> {product.quantity}</td>
+                                                <td className="centerButton">
+                                                    <button onClick={() => this.addCartProduct(product.id)} className="btn btn-info">Add</button>
+                                                </td>
+                                            </tr>
 
                                     )
                                 }
                             </tbody>
                         </table>
 
-                 </div>
-                 <br></br><br></br><br></br><br></br>
+                    </div>
+                </div>
             </div>
 
         )

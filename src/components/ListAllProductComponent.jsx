@@ -72,7 +72,7 @@ class ListAllProductComponent extends Component {
                             <div id="searchBar" className="input-group rounded">
                                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                                     aria-describedby="search-addon" value={this.state.query} onChange={this.mySearchHandler} />
-                                <button className="btn btn-primary" onClick={this.mySearch}>Find</button>
+                                <button id="searchButton" className="btn btn-primary" onClick={this.mySearch}>Find</button>
                                 {/* <span class="input-group-text border-0" id="search-addon">
                                             <i class="fas fa-search"></i>
                                         </span> */}
