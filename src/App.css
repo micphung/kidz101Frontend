@@ -207,7 +207,16 @@ body {
   align-content: center; */
   margin-top: 5%;
   min-width: 150px;
+}
 
+#btnCart4 {
+  align-items: left;
+  float: left;
+  /* align-self: center;
+  align-content: center; */
+  margin-top: 10%;
+  min-width: 150px;
+  margin-left: -12%
 }
 
 #signupButton {
