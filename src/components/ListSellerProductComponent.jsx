@@ -64,7 +64,7 @@ class ListSellerProductComponent extends Component {
                 <div id="test4" className="scrollbar-ripe-malinka">
                     <div id="headerImage">
                         <div id="header">
-                            <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> ID:{this.state.sId} &nbsp;&nbsp;</h2>
+                            <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> My Products &nbsp;&nbsp;</h2>
 
                             <div id="btnCart4">
                                 <div>

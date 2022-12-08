@@ -176,7 +176,7 @@ class CreateProductComponent extends Component {
                   <div className="form-group">
                     <label> Seller ID: </label>
                     <input placeholder="Enter our Seller ID Here" name="sId" className="form-control"
-                      value={this.state.sId} onChange={this.changeSellerIdHandler} />
+                      value={this.state.sId} />
                   </div>
 
                   <div className="form-group">

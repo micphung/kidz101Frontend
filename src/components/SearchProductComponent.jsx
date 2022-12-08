@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ProductService from '../services/ProductService'
+import background from "./bluebackgroundColor.jpeg";
 
 
 import { Image } from 'react';
@@ -54,13 +55,27 @@ class SearchProductComponent extends Component {
     }
 
     render() {
-        return (
+         const myStyle={
+        backgroundImage: 
+ `url(${background})` ,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+    
+        height: '100vh'
+    };
+
+        return (   
 
             <div id="allProducts" className="scrollbar-ripe-malinka">
+          
+
+
                 <div id="test4">
                     <div id="headerImage">
                         <div id="header">
-                            <h2 id="idHeader">Product List — User ID:{this.state.sId}</h2>
+                        <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> Results&nbsp;&nbsp;</h2>
+                            
                             <div id="searchBar" className="input-group rounded">
                                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                                     aria-describedby="search-addon" value={this.state.query} onChange={this.mySearchHandler} />
@@ -75,7 +90,7 @@ class SearchProductComponent extends Component {
                             <button className="btn btn-primary offset-md-11" onClick={this.allProduct}> All Products</button>
                         </div>
                     </div>
-
+                       
                     <div className="row">
 
 
@@ -118,7 +133,7 @@ class SearchProductComponent extends Component {
 
                     </div>
                 </div>
-            </div>
+            </div> 
 
         )
     }
