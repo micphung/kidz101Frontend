@@ -22,6 +22,7 @@ body {
   margin: 0;
   background-repeat: repeat;
   background-attachment: fixed;
+
   background-size: cover;
 }
 
@@ -30,12 +31,13 @@ body {
   font-size: 0.5rem;
 }
 
-
-
 #headerButton {
   font-size: 1.75rem;
   font-weight: 600;
   text-transform: uppercase;
+=======
+  background-size:  cover;
+
 }
 
 #welcomePage {
