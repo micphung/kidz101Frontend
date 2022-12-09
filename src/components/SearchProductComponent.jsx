@@ -19,7 +19,6 @@ class SearchProductComponent extends Component {
             query: this.props.match.params.query
 
 
-
         }
 
 
@@ -67,18 +66,15 @@ class SearchProductComponent extends Component {
     };
 
         return (
-         
-    
-
-            <div id="allProducts" className="scrollbar-ripe-malinka bg-cyan" >
+  
+            <div id="allProducts" className="scrollbar-ripe-malinka">
           
 
 
                 <div id="test4">
-
                     <div id="headerImage">
                         <div id="header">
-                        <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> Results&nbsp;&nbsp;</h2>
+                        <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> RESULTS&nbsp;&nbsp;</h2>
                             
                             <div id="searchBar" className="input-group rounded">
                                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
@@ -94,7 +90,7 @@ class SearchProductComponent extends Component {
                             <button className="btn btn-primary offset-md-11" onClick={this.allProduct}> All Products</button>
                         </div>
                     </div>
-                      
+
 
                     <div className="row">
 

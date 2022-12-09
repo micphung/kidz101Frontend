@@ -110,7 +110,8 @@ class ConfirmOrderComponent extends Component {
                     <div id="test2">
                         <div id="headerImage2">
                             <div id="header">
-                                <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> ID:{this.state.cId} &nbsp;&nbsp;</h2>
+                                <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> CONFIRM ORDER&nbsp;&nbsp;</h2>
+
                             </div>
 
                             <div id="btnCart5">
