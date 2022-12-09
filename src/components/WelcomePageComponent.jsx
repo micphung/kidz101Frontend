@@ -34,21 +34,24 @@ class WelcomePageComponent extends Component {
             <div id="loginContainer2" class="justify-content-center">
                 <WelcomePageHeaderComponent />
                 <div id="loginContainer" className="row">
+                    <div id="test4">
+                        <div id="largeLogo" class="justify-content-center"><img id="logo2" src="/largekidz101.png" alt="logo" /></div>
+                        <div><h2 id="slogan">Where Parents Love to Shop</h2></div>
+                        <div id="welcomePage" className="card col-md-10 ">
+                            {/* <h1 className="text-center">Welcome to Kidz101</h1> */}
 
-                    <div id="welcomePage" className="card col-md-10 ">
-                        <h1 className="text-center">Welcome to Kidz101</h1>
-                        <hr />
-                        <form>
-                            <div id="welcomeButtons">
+                            <form>
+                                <div>
 
-                                <button className="btn btn-outline-primary mr-1" onClick={this.toConsumerLoginHandler}>Consumer Marketplace</button>
+                                    <button id="welcomeButtons" className="btn btn-outline-primary mr-1" onClick={this.toConsumerLoginHandler}>Consumer Marketplace</button>
 
-                                <button className="btn btn-outline-primary col-sm-3" onClick={this.toSellerLoginHandler}>Seller Portal</button>
+                                    <button id="welcomeButtons" className="btn btn-outline-primary col-sm-3" onClick={this.toSellerLoginHandler}>Seller Portal</button>
 
 
-                            </div>
+                                </div>
 
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="circle1"></div>
