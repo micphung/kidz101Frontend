@@ -14,7 +14,7 @@ class WelcomePageHeaderComponent extends Component {
             <div className="fixed-top">
                 <header>
                     <nav className="navbar navbar-expand-md" id="loginBox">
-                        <div><a href="" className="navbar-brand"><img id="logo" src="/kidzLogo.png" alt="logo" /></a></div>
+                        {/* <div><a href="" className="navbar-brand"><img id="logo" src="/kidzLogo.png" alt="logo" /></a></div> */}
 
 
                     </nav>
