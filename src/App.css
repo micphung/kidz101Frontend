@@ -12,14 +12,25 @@
 
 * {
   font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 body {
   height: 100%;
-  background-image: linear-gradient(#eda130, #ffe5b0);
+  background-image: url('/public/yellowlights.jpeg');
   margin: 0;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
+#headerButton {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 #welcomePage {
@@ -28,13 +39,14 @@ body {
   justify-content: end;
   justify-items: end;
   justify-self: end;
+
 }
 
 #welcomeButtons {
   padding-left: 10%;
   padding-top: 5%;
   padding-bottom: 5%;
-
+  font-size: 40px;
 }
 
 #paymentProcess {
@@ -106,6 +118,7 @@ body {
 }
 
 #test4 {
+  /* padding-top: 50px; */
   padding-bottom: 45px;
   min-width: 130%;
   justify-content: space-evenly;
@@ -119,7 +132,7 @@ body {
 
 #headerImage {
 
-  min-height: 300px;
+  min-height: 350px;
   justify-content: space-evenly;
   background-image: url('/public/christmasHeader.JPG');
   ;
@@ -133,7 +146,7 @@ body {
 
 #headerImage2 {
   margin-top: -8%;
-  min-height: 300px;
+  min-height: 350px;
   justify-content: space-evenly;
   background-image: url('/public/christmasHeader.JPG');
   ;
@@ -196,7 +209,7 @@ body {
 }
 
 #allProducts {
-  margin-top: 70px;
+  margin-top: 120px;
   margin-left: -400px;
   /* min-width: 130%;
   display: flex;
@@ -275,8 +288,12 @@ body {
   margin-bottom: 5px;
 }
 
-.circle1,
-.circle2 {
+/* .circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5,
+.circle6 {
   background: white;
   background: linear-gradient(to right bottom,
       rgba(255, 255, 255, 0.8),
@@ -293,9 +310,29 @@ body {
 }
 
 .circle2 {
-  bottom: 5%;
-  left: -25%;
+  bottom: 15%;
+  left: -45%;
 }
+
+.circle3 {
+  bottom: -85%;
+  left: 0%;
+}
+
+.circle4 {
+  bottom: -95%;
+  left: 75%;
+}
+
+.circle5 {
+  bottom: 65%;
+  left: 35%;
+}
+
+.circle6 {
+  bottom: -95%;
+  left: -45%;
+} */
 
 h3,
 .card {
@@ -407,6 +444,7 @@ header a:hover {
 .toTheRight {
   text-align: right;
 }
- .navbar {
+
+.navbar {
   min-height: 90px;
 }
