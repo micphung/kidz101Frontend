@@ -2,7 +2,8 @@
 
 #logo {
   height: auto;
-  max-width: 70%;
+  max-width: 100%;
+
 }
 
 /* #logo:hover {
@@ -67,6 +68,7 @@ body {
 #loginContainer {
   justify-content: center;
   width: 900px;
+  /*font-weight: ;*/
 }
 
 #test {
@@ -404,4 +406,7 @@ header a:hover {
 
 .toTheRight {
   text-align: right;
+}
+ .navbar {
+  min-height: 90px;
 }

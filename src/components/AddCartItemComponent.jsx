@@ -127,7 +127,7 @@ class AddCartItemComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div className="scrollbar-ripe-malinka">
             <MarketHeaderComponent/>
                   <br></br><br></br><br></br><br></br>
                    <div className = "container">

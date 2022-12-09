@@ -19,6 +19,7 @@ class SearchProductComponent extends Component {
             query: this.props.match.params.query
 
 
+
         }
 
 
@@ -65,13 +66,16 @@ class SearchProductComponent extends Component {
         height: '100vh'
     };
 
-        return (   
+        return (
+         
+    
 
-            <div id="allProducts" className="scrollbar-ripe-malinka">
+            <div id="allProducts" className="scrollbar-ripe-malinka bg-cyan" >
           
 
 
                 <div id="test4">
+
                     <div id="headerImage">
                         <div id="header">
                         <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> Results&nbsp;&nbsp;</h2>
@@ -90,7 +94,8 @@ class SearchProductComponent extends Component {
                             <button className="btn btn-primary offset-md-11" onClick={this.allProduct}> All Products</button>
                         </div>
                     </div>
-                       
+                      
+
                     <div className="row">
 
 
@@ -133,7 +138,7 @@ class SearchProductComponent extends Component {
 
                     </div>
                 </div>
-            </div> 
+            </div>
 
         )
     }

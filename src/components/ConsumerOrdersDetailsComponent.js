@@ -71,7 +71,7 @@ class ConsumerOrdersDetailsComponent extends Component {
 
     render() {
         return (
-            <div id="allProducts">
+            <div id="allProducts" className="scrollbar-ripe-malinka">
                 <MarketHeaderComponent />
                 <div id="test4" className="scrollbar-ripe-malinka">
                     <div id="headerImage">

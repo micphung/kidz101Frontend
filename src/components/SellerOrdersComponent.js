@@ -70,13 +70,13 @@ class SellerOrdersComponent extends Component {
 
     render() {
         return (
-            <div id="allProducts">
+            <div id="allProducts" className="scrollbar-ripe-malinka">
                 <MarketHeaderComponent />
                 <div id="test4" className="scrollbar-ripe-malinka">
                     <div id="headerImage">
                         <div id="header">
                         <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> Order Details &nbsp;&nbsp;</h2>
-                           
+                            <h2 id="idHeader" className="text-center">Order Details</h2>
                         </div>
                         <div id="btnCart5">
                             <button className="btn btn-primary" id="btn" onClick={this.cancel}>Back</button>
