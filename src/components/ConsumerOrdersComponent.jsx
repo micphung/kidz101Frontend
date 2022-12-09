@@ -64,7 +64,8 @@ class ConsumerOrdersComponent extends Component {
                 <div id="test4">
                     <div id="headerImage">
                         <div id="header">
-                            <h2 id="idHeader" className="text-center">Your Orders - ID:{this.state.cId}</h2>
+                        <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> PAST ORDERS &nbsp;&nbsp;</h2>
+                            
                         </div>
                         <div id="btnCart5">
                             <button className="btn btn-primary" onClick={this.marketHandler.bind(this)}>Back</button>

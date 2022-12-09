@@ -498,3 +498,11 @@ header a:hover {
 .navbar {
   min-height: 90px;
 }
+#pinCard{
+
+  display: block;
+  width: 130px;
+  
+}
+
+
