@@ -16,7 +16,7 @@ class HeaderComponent extends Component {
                     <nav className="navbar navbar-expand-md">
                         <div><a href="" className="navbar-brand"><img id="logo" src="/kidzLogo.png" alt="logo" /></a></div>
 
-                        <div className="navbar-nav ml-auto"><a href="http://localhost:3000/" className="navbar-brand">Sign Out</a></div>
+                        <div className="navbar-nav ml-auto"><a href="http://localhost:3000/" id="headerButton" className="navbar-brand">Sign Out</a></div>
                     </nav>
                 </header>
             </div>

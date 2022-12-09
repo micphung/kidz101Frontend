@@ -56,8 +56,8 @@ class CreateSellerComponent extends Component {
             <div class="justify-content-center" id="loginContainer2">
                 <SellerHeaderComponent />
                 <div id="loginContainer" className="row">
-                    <div id="test" className="card col-md-10">
-                        <h1 className="text-center">Seller Portal</h1>
+                    <div id="test2" className="card col-md-10">
+                        <h1 className="text-center">SELLER PORTAL</h1>
                         <div className="row">
                             <div className="card col-md-10 offset-md-1">
                                 <form>
@@ -100,6 +100,8 @@ class CreateSellerComponent extends Component {
                         </div>
                     </div>
                 </div>
+                <div class="circle1"></div>
+                <div class="circle2"></div>
             </div>
 
         )
