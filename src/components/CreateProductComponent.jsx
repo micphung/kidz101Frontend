@@ -79,7 +79,7 @@ class CreateProductComponent extends Component {
     return (
       <div id="loginContainer3">
         <div className="container">
-          <div className="row">
+          <div className="row" id="addtoCart">
             <div className="card col-md-6 offset-md-3 offset-md-3">
               <br></br>
               <h3 className="text-center">Add Product</h3>
