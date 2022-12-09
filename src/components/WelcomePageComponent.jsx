@@ -37,7 +37,7 @@ class WelcomePageComponent extends Component {
                     <div id="test4">
                         <div id="largeLogo" class="justify-content-center"><img id="logo2" src="/largekidz101.png" alt="logo" /></div>
                         <div><h2 id="slogan">Where Parents Love to Shop</h2></div>
-                        <div id="welcomePage" className="card col-md-10 ">
+                        <div id="welcomePage" className="">
                             {/* <h1 className="text-center">Welcome to Kidz101</h1> */}
 
                             <form>
