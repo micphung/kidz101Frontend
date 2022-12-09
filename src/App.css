@@ -25,6 +25,11 @@ body {
   background-size: cover;
 }
 
+#footer {
+  min-height: 67px;
+  font-size: 0.5rem;
+}
+
 
 
 #headerButton {
