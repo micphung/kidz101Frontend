@@ -72,8 +72,8 @@ class SearchMarketProductComponent extends Component {
                 <div id="test4">
                     <div id="headerImage">
                         <div id="header">
-                        <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" />RESULTS &nbsp;&nbsp;</h2>
-                            
+                            <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" />RESULTS &nbsp;&nbsp;</h2>
+
                             <div id="searchBar" className="input-group rounded">
                                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                                     aria-describedby="search-addon" value={this.state.query} onChange={this.mySearchHandler} />

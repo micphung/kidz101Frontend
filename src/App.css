@@ -51,7 +51,7 @@ body {
   margin: 0;
   background-repeat: repeat;
   background-attachment: fixed;
-background-size:  cover;
+  background-size: cover;
 
 }
 
@@ -65,7 +65,7 @@ background-size:  cover;
   font-weight: 600;
   text-transform: uppercase;
 
-  background-size:  cover;
+  background-size: cover;
 
 }
 
@@ -339,7 +339,25 @@ background-size:  cover;
   float: left;
   /* align-self: center;
   align-content: center; */
+  margin-top: 10%;
+  min-width: 150px;
+}
+
+#confirmOrder {
+  align-items: left;
+  float: left;
+  /* align-self: center;
+  align-content: center; */
   margin-top: 20%;
+  min-width: 150px;
+}
+
+#allProductBtn {
+  align-items: left;
+  float: left;
+  /* align-self: center;
+  align-content: center; */
+  margin-top: 9%;
   min-width: 150px;
 }
 
@@ -348,7 +366,7 @@ background-size:  cover;
   float: left;
   /* align-self: center;
   align-content: center; */
-  margin-top: 9%;
+  margin-top: 7%;
   margin-left: -1%;
   min-width: 150px;
 }
@@ -522,11 +540,10 @@ header a:hover {
 .navbar {
   min-height: 90px;
 }
-#pinCard{
+
+#pinCard {
 
   display: block;
   width: 130px;
-  
+
 }
-
-

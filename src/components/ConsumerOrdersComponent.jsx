@@ -64,8 +64,8 @@ class ConsumerOrdersComponent extends Component {
                 <div id="test4">
                     <div id="headerImage">
                         <div id="header">
-                        
-                            
+
+
 
                             <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> ORDERS &nbsp;&nbsp;</h2>
 

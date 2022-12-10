@@ -114,7 +114,7 @@ class ConfirmOrderComponent extends Component {
 
                             </div>
 
-                            <div id="btnCart5">
+                            <div id="confirmOrder">
                                 <button className="btn btn-primary" id="btn" onClick={this.myCartHandler}> My Cart</button>
                             </div>
                         </div>
@@ -148,19 +148,19 @@ class ConfirmOrderComponent extends Component {
 
                                     <div className="card-body">
                                         <form>
-                                         <img id="logo" src="/creditcards.png" width="200" 
-     height="500"/>
-                 
+                                            <img id="logo" src="/creditcards.png" width="200"
+                                                height="500" />
+
 
                                             <div className="form-group">
-                                            <br></br>
+                                                <br></br>
                                                 <label> Payment Card: </label>
                                                 <input placeholder="Enter Card Number" name="cardNumber" className="form-control"
                                                     value={this.state.cardNumber} onChange={this.changeCardNumberHandler} />
-                                                     <input placeholder="CVV "  id="pinCard" name="cardNumber" className="form-control"
+                                                <input placeholder="CVV " id="pinCard" name="cardNumber" className="form-control"
                                                     value={this.state.cardNumber} />
                                             </div>
-                                            
+
                                             <div className="form-group">
                                                 <label> Street Address: </label>
                                                 <input placeholder="Enter your street addressr" name="street" className="form-control"

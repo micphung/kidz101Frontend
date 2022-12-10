@@ -79,10 +79,10 @@ class MyCartComponent extends Component {
                     <div id="headerImage">
                         <div id="header">
 
-                        
-                            
 
-                        <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> CART ITEMS&nbsp;&nbsp;</h2>
+
+
+                            <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> CART ITEMS&nbsp;&nbsp;</h2>
 
                         </div>
                         <div id="btnCart6">

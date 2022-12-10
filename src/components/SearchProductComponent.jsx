@@ -55,27 +55,27 @@ class SearchProductComponent extends Component {
     }
 
     render() {
-         const myStyle={
-        backgroundImage: 
- `url(${background})` ,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-    
-        height: '100vh'
-    };
+        const myStyle = {
+            backgroundImage:
+                `url(${background})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+
+            height: '100vh'
+        };
 
         return (
-  
+
             <div id="allProducts" className="scrollbar-ripe-malinka">
-          
+
 
 
                 <div id="test4">
                     <div id="headerImage">
                         <div id="header">
-                        <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> RESULTS&nbsp;&nbsp;</h2>
-                            
+                            <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> RESULTS&nbsp;&nbsp;</h2>
+
                             <div id="searchBar" className="input-group rounded">
                                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                                     aria-describedby="search-addon" value={this.state.query} onChange={this.mySearchHandler} />
@@ -86,7 +86,7 @@ class SearchProductComponent extends Component {
                             </div>
                         </div>
 
-                        <div id="btnCart5">
+                        <div id="allProductBtn">
                             <button className="btn btn-primary offset-md-11" onClick={this.allProduct}> All Products</button>
                         </div>
                     </div>
