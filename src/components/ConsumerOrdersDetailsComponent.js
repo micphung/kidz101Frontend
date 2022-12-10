@@ -76,7 +76,12 @@ class ConsumerOrdersDetailsComponent extends Component {
                 <div id="test4" className="scrollbar-ripe-malinka">
                     <div id="headerImage">
                         <div id="header">
-                            <h2 id="idHeader" className="text-center">Order Details - Order #: {this.state.oId}</h2>
+
+                        
+                            
+
+                        <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" />  ORDER #: {this.state.oId}&nbsp;&nbsp;</h2>
+
                         </div>
                         <div id="btnCart5">
                             <button className="btn btn-primary" id="btn" onClick={this.cancel}>All Orders</button>

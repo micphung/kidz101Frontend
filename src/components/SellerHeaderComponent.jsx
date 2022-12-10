@@ -13,10 +13,13 @@ class SellerHeaderComponent extends Component {
         return (
             <div className="fixed-top">
                 <header>
-                    <nav className="navbar navbar-expand-md" >
+                    <nav className="navbar navbar-expand-md" id="loginBox">
                         <div><a href="" className="navbar-brand"><img id="logo" src="/kidzLogo.png" alt="logo" /></a></div>
 
-                        <div className="navbar-nav ml-auto"><a href="http://localhost:3000/" id="headerButton" className="navbar-brand">Market Place</a></div>
+
+                        <div className="navbar-nav ml-auto"><a href="http://localhost:3000/consumerLogin" id="headerButton" className="navbar-brand">Market Place</a></div>
+
+                        
                     </nav>
                 </header>
             </div>

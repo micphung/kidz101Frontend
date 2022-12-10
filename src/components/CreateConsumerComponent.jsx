@@ -57,6 +57,7 @@ class CreateConsumerComponent extends Component {
                 <MainHeaderComponent />
                 <div id="loginContainer" className="row">
                     <div id="test2" className="card col-md-10 ">
+                    <h1 className="text-center">MARKET PLACE</h1>
 
                         <div className="row">
 
@@ -69,8 +70,8 @@ class CreateConsumerComponent extends Component {
                                             value={this.state.cId} onChange={this.changecIdHandler} />
                                     </div>
                                     <div className="form-group">
-                                        <label> Password:</label>
-                                        <input placeholder="Password" name="password" className="form-control"
+                                        <label> Password:</label><img id="logo" width="5%" className="offset-md-9" src="/nosee.png" />
+                                        <input type="password" id="myInput" placeholder="Password" name="password" className="form-control"
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
                                     <div id="loginButton">
@@ -95,8 +96,8 @@ class CreateConsumerComponent extends Component {
 
 
                                     <div className="form-group">
-                                        <label> Password:</label>
-                                        <input placeholder="Password" name="password" className="form-control"
+                                        <label> Password:</label><img id="logo" width="5%" className="offset-md-9" src="/nosee.png" />
+                                        <input type="password" id="myInput" placeholder="Password" name="password" className="form-control"
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
 

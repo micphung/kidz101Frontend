@@ -17,6 +17,8 @@ class CreateSellerComponent extends Component {
 
         this.saveProduct = this.saveProduct.bind(this);
         // this.onValueChange = this.onValueChange.bind(this);
+        
+        
 
     }
 
@@ -68,13 +70,14 @@ class CreateSellerComponent extends Component {
                                             value={this.state.sId} onChange={this.changesIdHandler} />
                                     </div>
                                     <div className="form-group">
-                                        <label> Password:</label>
-                                        <input placeholder="Password" name="password" className="form-control"
+                                        <label> Password:</label><img id="logo" width="5%" className="offset-md-9" src="/nosee.png" />
+                                        <input type="password" id="myInput" placeholder="Password" name="password" className="form-control"
                                             value={this.state.password} onChange={this.changePasswordHandler} />
+                                        
                                     </div>
                                     <div class="loginButton">
                                         <button id="loginButtons" className="btn btn-primary" onClick={this.alreadyMember}> Login</button>
-                                        <button id="forgotPass" className="btn ml-auto" onClick={this.alreadyMember}> Forgot Password?</button>
+                                        <button id="forgotPass" className="btn ml-auto"> Forgot Password?</button>
                                     </div>
                                 </form>
                             </div>
@@ -87,8 +90,8 @@ class CreateSellerComponent extends Component {
                                             value={this.state.sId} onChange={this.changesIdHandler} />
                                     </div>
                                     <div className="form-group">
-                                        <label> Password:</label>
-                                        <input placeholder="Password" name="password" className="form-control"
+                                        <label> Password:</label><img id="logo" width="5%" className="offset-md-9" src="/nosee.png" />
+                                        <input type="password" id="myInput" placeholder="Password" name="password" className="form-control"
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
                                     <div class="signupButton">

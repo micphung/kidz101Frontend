@@ -110,7 +110,8 @@ class ConfirmOrderComponent extends Component {
                     <div id="test2">
                         <div id="headerImage2">
                             <div id="header">
-                                <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> ID:{this.state.cId} &nbsp;&nbsp;</h2>
+                                <h2 id="idHeader"><img id="logo" src="/smallLogo.png" alt="logo" /> CONFIRM ORDER&nbsp;&nbsp;</h2>
+
                             </div>
 
                             <div id="btnCart5">
@@ -147,12 +148,19 @@ class ConfirmOrderComponent extends Component {
 
                                     <div className="card-body">
                                         <form>
+                                         <img id="logo" src="/creditcards.png" width="200" 
+     height="500"/>
+                 
 
                                             <div className="form-group">
+                                            <br></br>
                                                 <label> Payment Card: </label>
                                                 <input placeholder="Enter Card Number" name="cardNumber" className="form-control"
                                                     value={this.state.cardNumber} onChange={this.changeCardNumberHandler} />
+                                                     <input placeholder="CVV "  id="pinCard" name="cardNumber" className="form-control"
+                                                    value={this.state.cardNumber} />
                                             </div>
+                                            
                                             <div className="form-group">
                                                 <label> Street Address: </label>
                                                 <input placeholder="Enter your street addressr" name="street" className="form-control"
